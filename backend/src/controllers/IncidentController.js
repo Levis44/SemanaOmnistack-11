@@ -43,10 +43,10 @@ const [count] = await connection('incidents').count();
     
     const incident = await connection('incidents')
      .where('id', id)
-     .select('id')
+     .select('ong_id')
      .first();
 
-     if (incident.id != id) {
+     if (incident.ong_id != ong_id) {
          return response.status(401).json({ error: 'Operation not permitted.' });
      }
 
